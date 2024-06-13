@@ -17,20 +17,20 @@ public final class ArticleDTOMapperTest {
     @InjectMocks
     private ArticleDTOMapper mapper;
     @Test
-    public void to_domain_correctly_given_an_iterable_of_article_dto()
+    public void to_domain_correctly_given_the_standard_article_dtos()
     {
         // Given
-        Iterable<ArticleDTO> articleDTOIterable = givenNoArticleDTOs();
+        Iterable<ArticleDTO> articleDTOIterable = givenTheArticleDTOsXYZ();
 
         // When
         List<Article> result = mapper.toDomain(articleDTOIterable);
 
         // Then
-        List<Article> expected = givenNoArticles();
+        List<Article> expected = givenTheArticlesXYZ();
         Assertions.assertThat(result).isEqualTo(expected);
     }
     @Test
-    public void to_domain_correctly_given_an_empty_iterable_of_article_dto()
+    public void to_domain_correctly_given_no_article_dtos()
     {
         // Given
         Iterable<ArticleDTO> articleDTOIterable = givenNoArticleDTOs();
