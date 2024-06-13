@@ -17,8 +17,6 @@ public final class ArticleDTOMapper {
     {
         return StreamSupport
             .stream(articleDTOIterable.spliterator(), false)
-            .toList()
-            .stream()
             .map(articleDTO -> Article.of(
                 ArticleId.of(articleDTO.getId()),
                 Name.of(articleDTO.getName())
